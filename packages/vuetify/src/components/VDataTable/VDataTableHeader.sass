@@ -7,6 +7,8 @@
     th.sortable
       .v-data-table-header__icon
         color: map-deep-get($material, 'text', 'disabled')
+        &::after
+          background-color: transparent
 
       &:hover,
       &.active
@@ -25,7 +27,7 @@
   th
     &.sortable
       pointer-events: auto
-      cursor: pointer
+      // cursor: default
       outline: 0
 
     &.active, &:hover

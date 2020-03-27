@@ -69,12 +69,13 @@ export default mixins<options>().extend({
         ...data,
       })
     },
-    genSortIcon () {
+    genSortIcon (header?: DataTableHeader) {
       return this.$createElement(VIcon, {
         staticClass: 'v-data-table-header__icon',
         props: {
           size: 18,
         },
+        on: header?{ click: () => this.$emit("sort", header.value) }:{}
       }, [this.sortIcon])
     },
   },

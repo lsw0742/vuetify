@@ -47,7 +47,7 @@ export default mixins(header).extend({
         )
 
         if (!this.disableSort && (header.sortable || !header.hasOwnProperty('sortable'))) {
-          listeners['click'] = () => this.$emit('sort', header.value)
+          // listeners['click'] = () => this.$emit('sort', header.value)
 
           const sortIndex = this.options.sortBy.findIndex(k => k === header.value)
           const beingSorted = sortIndex >= 0
@@ -67,8 +67,8 @@ export default mixins(header).extend({
             attrs['aria-label'] += this.$vuetify.lang.t('$vuetify.dataTable.ariaLabel.sortNone')
           }
 
-          if (header.align === 'end') children.unshift(this.genSortIcon())
-          else children.push(this.genSortIcon())
+          if (header.align === 'end') children.unshift(this.genSortIcon(header))
+          else children.push(this.genSortIcon(header))
 
           if (this.options.multiSort && beingSorted) {
             children.push(this.$createElement('span', { class: 'v-data-table-header__sort-badge' }, [String(sortIndex + 1)]))
