@@ -89,10 +89,6 @@
       "heading": "### Custom colors",
       "desc": "You can optionally change a text field into any color in the Material design palette. Below is an example implementation of a custom form with validation."
     },
-    "masks": {
-      "heading": "### Masks (using vue-the-mask)",
-      "desc": "You can add masking functionality using a 3rd party library such as vue-the-mask."
-    },
     "progress-bar": {
       "heading": "### Progress bar",
       "desc": "You can display a progress bar instead of the bottom line. You can use the default indeterminate progress having same color as the text field or designate a custom one using the `progress` slot"
@@ -127,8 +123,8 @@
     "shaped": "Round if `outlined` and increase `border-radius` if `filled`. Must be used with either `outlined` or `filled`"
   },
   "slots": {
-    "append-outer": "Appends an item inside input content",
-    "prepend-inner": "Prepends an item inside input content"
+    "append-outer": "Adds an item outside the input and after input content",
+    "prepend-inner": "Adds an item inside the input and before input content"
   },
   "events": {
     "blur": "Emitted when the input is blurred",

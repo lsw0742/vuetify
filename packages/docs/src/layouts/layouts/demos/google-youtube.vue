@@ -33,7 +33,7 @@
                 alt=""
               >
             </v-list-item-avatar>
-            <v-list-item-title v-text="item.text" />
+            <v-list-item-title v-text="item.text"></v-list-item-title>
           </v-list-item>
         </v-list>
         <v-list-item
@@ -47,7 +47,7 @@
         </v-list-item>
         <v-list-item link>
           <v-list-item-action>
-            <v-icon color="grey darken-1">mdi-settings</v-icon>
+            <v-icon color="grey darken-1">mdi-cog</v-icon>
           </v-list-item-action>
           <v-list-item-title class="grey--text text--darken-1">Manage Subscriptions</v-list-item-title>
         </v-list-item>
@@ -60,12 +60,17 @@
       color="red"
       dense
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-icon class="mx-4">fab fa-youtube</v-icon>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-icon
+        class="mx-4"
+        large
+      >
+        mdi-youtube
+      </v-icon>
       <v-toolbar-title class="mr-12 align-center">
         <span class="title">Youtube</span>
       </v-toolbar-title>
-      <v-spacer />
+      <v-spacer></v-spacer>
       <v-row
         align="center"
         style="max-width: 650px"
@@ -74,14 +79,14 @@
           :append-icon-cb="() => {}"
           placeholder="Search..."
           single-line
-          append-icon="search"
+          append-icon="mdi-magnify"
           color="white"
           hide-details
-        />
+        ></v-text-field>
       </v-row>
     </v-app-bar>
 
-    <v-content>
+    <v-main>
       <v-container class="fill-height">
         <v-row
           justify="center"
@@ -102,24 +107,10 @@
               </template>
               <span>Source</span>
             </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  large
-                  href="https://codepen.io/johnjleider/pen/aezMOO"
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip>
           </v-col>
         </v-row>
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
@@ -131,11 +122,11 @@
     data: () => ({
       drawer: null,
       items: [
-        { icon: 'trending_up', text: 'Most Popular' },
-        { icon: 'subscriptions', text: 'Subscriptions' },
-        { icon: 'history', text: 'History' },
-        { icon: 'featured_play_list', text: 'Playlists' },
-        { icon: 'watch_later', text: 'Watch Later' },
+        { icon: 'mdi-trending-up', text: 'Most Popular' },
+        { icon: 'mdi-youtube-subscription', text: 'Subscriptions' },
+        { icon: 'mdi-history', text: 'History' },
+        { icon: 'mdi-playlist-play', text: 'Playlists' },
+        { icon: 'mdi-clock', text: 'Watch Later' },
       ],
       items2: [
         { picture: 28, text: 'Joseph' },

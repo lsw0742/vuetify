@@ -1,5 +1,5 @@
 import OurVue, { VueConstructor } from 'vue'
-import { VuetifyUseOptions } from 'types'
+import { VuetifyUseOptions } from 'vuetify/types'
 import { consoleError } from './util/console'
 
 export function install (Vue: VueConstructor, args: VuetifyUseOptions = {}) {
@@ -47,6 +47,24 @@ export function install (Vue: VueConstructor, args: VuetifyUseOptions = {}) {
         this.$vuetify = Vue.observable(options.vuetify.framework)
       } else {
         this.$vuetify = (options.parent && options.parent.$vuetify) || this
+      }
+    },
+    beforeMount () {
+      // @ts-ignore
+      if (this.$options.vuetify && this.$el.hasAttribute('data-server-rendered')) {
+        // @ts-ignore
+        this.$vuetify.isHydrating = true
+        // @ts-ignore
+        this.$vuetify.breakpoint.update(true)
+      }
+    },
+    mounted () {
+      // @ts-ignore
+      if (this.$options.vuetify && this.$vuetify.isHydrating) {
+        // @ts-ignore
+        this.$vuetify.isHydrating = false
+        // @ts-ignore
+        this.$vuetify.breakpoint.update()
       }
     },
   })
