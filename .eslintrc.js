@@ -29,7 +29,13 @@ module.exports = {
     }],
     'max-statements': ['error', 24],
     'no-console': 'off',
-    'comma-dangle': ['error', 'always-multiline'],
+    'comma-dangle': ['error', {
+      arrays: 'always-multiline',
+      objects: 'always-multiline',
+      imports: 'always-multiline',
+      exports: 'always-multiline',
+      functions: 'only-multiline'
+    }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-return-assign': 'off',
@@ -53,6 +59,10 @@ module.exports = {
       'ignoreReadBeforeAssign': true
     }],
     'no-prototype-builtins': 'off',
+
+    // TODO: remove when eslint >=7.5
+    // https://github.com/eslint/eslint/issues/13637
+    'no-unused-expressions': 'off',
 
     // Not in override, these apply to non-.vue files too
     'vue/name-property-casing': 'off',
