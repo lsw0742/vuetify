@@ -15,7 +15,7 @@ export default mixins(header).extend({
           click: (e: MouseEvent) => {
             e.stopPropagation()
             this.$emit('group', header.value)
-        },
+          },
         },
       }, ['group'])
     },
@@ -51,18 +51,18 @@ export default mixins(header).extend({
     genHeader (header: DataTableHeader) {
       const data: Required<Pick<VNodeData, 'attrs' | 'on' | 'class' | 'style'>> = {
         attrs: {
-        role: 'columnheader',
-        scope: 'col',
-        'aria-label': header.text || '',
+          role: 'columnheader',
+          scope: 'col',
+          'aria-label': header.text || '',
         },
         style: {
-        width: convertToUnit(header.width),
-        minWidth: convertToUnit(header.width),
+          width: convertToUnit(header.width),
+          minWidth: convertToUnit(header.width),
         },
         class: [
-        `text-${header.align || 'start'}`,
-        ...wrapInArray(header.class),
-        header.divider && 'v-data-table__divider',
+          `text-${header.align || 'start'}`,
+          ...wrapInArray(header.class),
+          header.divider && 'v-data-table__divider',
         ],
         on: {},
       }
@@ -76,14 +76,14 @@ export default mixins(header).extend({
         this.$scopedSlots[header.value]
           ? this.$scopedSlots[header.value]!({ header })
           : this.$createElement('span', [header.text])
-        )
+      )
 
-        if (!this.disableSort && (header.sortable || !header.hasOwnProperty('sortable'))) {
-		// data.on['click'] = () => this.$emit('sort', header.value)
+      if (!this.disableSort && (header.sortable || !header.hasOwnProperty('sortable'))) {
+        // data.on.click = () => this.$emit('sort', header.value)
 
-          const sortIndex = this.options.sortBy.findIndex(k => k === header.value)
-          const beingSorted = sortIndex >= 0
-          const isDesc = this.options.sortDesc[sortIndex]
+        const sortIndex = this.options.sortBy.findIndex(k => k === header.value)
+        const beingSorted = sortIndex >= 0
+        const isDesc = this.options.sortDesc[sortIndex]
 
         data.class.push('sortable')
 
@@ -92,18 +92,18 @@ export default mixins(header).extend({
         data.attrs['aria-label'] += `${header.text ? ': ' : ''}${ariaLabel}`
         data.attrs['aria-sort'] = ariaSort
 
-          if (beingSorted) {
+        if (beingSorted) {
           data.class.push('active')
           data.class.push(isDesc ? 'desc' : 'asc')
-          }
-
-          if (header.align === 'end') children.unshift(this.genSortIcon(header))
-          else children.push(this.genSortIcon(header))
-
-          if (this.options.multiSort && beingSorted) {
-            children.push(this.$createElement('span', { class: 'v-data-table-header__sort-badge' }, [String(sortIndex + 1)]))
-          }
         }
+
+        if (header.align === 'end') children.unshift(this.genSortIcon(header))
+        else children.push(this.genSortIcon(header))
+
+        if (this.options.multiSort && beingSorted) {
+          children.push(this.$createElement('span', { class: 'v-data-table-header__sort-badge' }, [String(sortIndex + 1)]))
+        }
+      }
 
       if (this.showGroupBy && header.groupable !== false) children.push(this.genGroupByToggle(header))
 

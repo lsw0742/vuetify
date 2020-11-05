@@ -317,6 +317,13 @@ export default baseMixins.extend<options>().extend({
       const uniqueValues = new Map()
       for (let index = 0; index < arr.length; ++index) {
         const item = arr[index]
+
+        // Do not deduplicate headers or dividers (#12517)
+        if (item.header || item.divider) {
+          uniqueValues.set(item, item)
+          continue
+        }
+
         const val = this.getValue(item)
 
         // TODO: comparator
@@ -701,6 +708,7 @@ export default baseMixins.extend<options>().extend({
       }
     },
     onMouseUp (e: MouseEvent) {
+      // eslint-disable-next-line sonarjs/no-collapsible-if
       if (
         this.hasMouseDown &&
         e.which !== 3 &&
