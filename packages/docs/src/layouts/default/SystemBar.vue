@@ -1,14 +1,14 @@
 <template>
   <v-system-bar
     v-if="false"
+    color="#1A265A"
     app
-    color="#1D1D22"
     dark
-    height="84"
+    height="76"
   >
     <a
       class="cm-banner"
-      href="https://store.vuetifyjs.com/?utm_source=vuetify&utm_medium=banner&utm_campaign=cybermonday"
+      href="https://vueschool.io/sales/summer-vue?friend=vuetify"
       rel="noopener"
       target="_blank"
       @click="onClick"
@@ -28,7 +28,7 @@
 
 <script>
   // Utilities
-  import { differenceInHours, isBefore } from 'date-fns'
+  import { differenceInHours } from 'date-fns'
   import { get, sync } from 'vuex-pathify'
 
   export default {
@@ -41,7 +41,6 @@
         const now = Date.now()
 
         return (
-          isBefore(now, new Date(2020, 12, 1)) &&
           differenceInHours(now, Number(this.last)) > 1
         )
       },
@@ -51,7 +50,7 @@
       onClick () {
         this.$gtag.event('click', {
           event_category: 'vuetify-banner',
-          event_label: 'cyber-monday-2020',
+          event_label: 'vue-school-summer-vue',
           value: this.name.toLowerCase(),
         })
       },
@@ -64,8 +63,6 @@
 
 <style lang="sass">
   .cm-banner
-    background-color: #1D1D22
-    background-image: url(https://vuetifyjs.b-cdn.net/docs/images/promotions/cyber-monday-2020/cm-mobile.svg)
     background-position: center
     background-repeat: no-repeat
     background-size: contain
@@ -80,11 +77,12 @@
     top: 0
     white-space: nowrap
 
-  @media (min-width: 660px)
-    .cm-banner
-      background-image: url(https://cdn.vuetifyjs.com/docs/images/promotions/cyber-monday-2020/cm-tablet.svg)
+  .cm-banner
+    background-image: url(https://cdn.vuetifyjs.com/docs/images/promotions/vs-summer-sale-2021/vs-summer-mobile.png)
 
-  @media (min-width: 992px)
-    .cm-banner
-      background-image: url(https://cdn.vuetifyjs.com/docs/images/promotions/cyber-monday-2020/cm-desktop.svg)
+    @media (min-width: 660px)
+      background-image: url(https://cdn.vuetifyjs.com/docs/images/promotions/vs-summer-sale-2021/vs-summer-tablet.png)
+
+    @media (min-width: 992px)
+      background-image: url(https://cdn.vuetifyjs.com/docs/images/promotions/vs-summer-sale-2021/vs-summer-desktop.png)
 </style>

@@ -28,6 +28,8 @@ Icons come in two themes (light and dark), and five different sizes (x-small, sm
 
 - [v-icon](/api/v-icon)
 
+<api-section page="components/icons" />
+
 ## Examples
 
 ### Props
@@ -56,7 +58,7 @@ Icons can be used inside of buttons to add emphasis to the action.
 
 #### Font Awesome
 
-[Font Awesome](http://fontawesome.io/icons/) is also supported. Simply use the `fa-` prefixed icon name. Please note that you still need to include the Font Awesome icons in your project. For more information on how to install it, please navigate to the [installation page](/features/icon-fonts#install-font-awesome-5-icons)
+[Font Awesome](https://fontawesome.com/icons/) is also supported. Simply use the `fa-` prefixed icon name. Please note that you still need to include the Font Awesome icons in your project. For more information on how to install it, please navigate to the [installation page](/features/icon-fonts#install-font-awesome-5-icons)
 
 <example file="v-icon/misc-font-awesome" />
 
@@ -112,7 +114,7 @@ If your icons are purely decorative, you’ll need to manually add an attribute 
 
 ### Semantic SVG Icons
 
-If your icon has semantic meaning, all you need to do is throw a attribute.The attribute and the element are added so that your icons are properly accessible.`role="img"<v-icon>`.
+Apply accessibility attributes to the [v-icon](/components/icons/) component, such as `role="img"`, to give it a semantic meaning.
 
 ```html
 <v-icon aria-label="My Account" role="img" aria-hidden="false">

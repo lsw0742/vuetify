@@ -29,6 +29,8 @@ The `v-tabs` component is a styled extension of [v-item-group](/components/item-
 - [v-tabs-items](/api/v-tabs-items)
 - [v-tabs-slider](/api/v-tabs-slider)
 
+<api-section page="components/tabs" />
+
 <!-- ## Sub-components
 
 ### v-tab
@@ -70,6 +72,8 @@ v-tabs-slider description -->
 Make `v-tabs` lined up with the `v-toolbar-title` component using the **align-with-title** prop (`v-app-bar-nav-icon` or `v-btn` must be used in `v-toolbar`).
 
 <example file="v-tabs/prop-align-with-title" />
+
+<promoted-ad slug="vuetify-zero-theme-pro" />
 
 #### Center active
 

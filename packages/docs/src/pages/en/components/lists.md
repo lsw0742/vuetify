@@ -35,6 +35,8 @@ Lists come in three main variations. **single-line** (default), **two-line** and
 - [v-list-item-subtitle](/api/v-list-item-subtitle)
 - [v-list-item-title](/api/v-list-item-title)
 
+<api-section page="components/lists" />
+
 <!-- ## Sub-components
 
 ### v-list-item
@@ -86,6 +88,8 @@ v-list-item-title description -->
 #### Disabled
 
 You cannot interact with disabled `v-list`.
+
+<promoted-ad slug="vuetify-lux-admin-pro" />
 
 <example file="v-list/prop-disabled" />
 

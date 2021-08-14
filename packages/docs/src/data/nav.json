@@ -201,8 +201,8 @@
     "icon": "$mdiTeach",
     "items": [
       "jobs-for-vue",
-      "made-with-vuetify",
-      "themes"
+      "themes",
+      "ui-kits"
     ]
   },
   {

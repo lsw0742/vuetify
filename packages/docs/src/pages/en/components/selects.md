@@ -23,6 +23,8 @@ Select fields components are used for collecting user provided information from 
 
 - [v-select](/api/v-select)
 
+<api-section page="components/selects" />
+
 ## Caveats
 
 <alert type="info">
@@ -91,7 +93,7 @@ A multi-select can utilize `v-chip` as the display for selected items.
 
 #### Readonly
 
-You cannot use read-only `v-select`, but it looks default.
+You can use the **read-only** prop on `v-select` which will prevent a user from changing its value.
 
 <example file="v-select/prop-readonly" />
 

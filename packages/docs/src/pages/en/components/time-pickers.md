@@ -25,6 +25,8 @@ Time pickers have the light theme enabled by default.
 
 - [v-time-picker](/api/v-time-picker)
 
+<api-section page="components/time-pickers" />
+
 ## Examples
 
 ### Props
@@ -97,7 +99,7 @@ Time picker can have seconds input.
 
 #### Width
 
-You can specify allowed the picker's width or make it full width.
+You can specify the picker's width or make it full width.
 
 <example file="v-time-picker/prop-width" />
 
